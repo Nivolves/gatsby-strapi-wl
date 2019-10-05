@@ -32,6 +32,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "commitlint": "^8.1.0",
+    "dotenv": "^8.1.0",
     "gatsby": "^2.10.0",
     "gatsby-image": "^2.2.1",
     "gatsby-plugin-canonical-urls": "^2.1.0",
@@ -43,6 +44,8 @@
     "gatsby-plugin-sharp": "^2.2.1",
     "gatsby-plugin-typescript": "^2.1.0",
     "gatsby-source-filesystem": "^2.1.0",
+    "gatsby-source-strapi": "0.0.10",
+    "gatsby-transformer-remark": "^2.6.27",
     "gatsby-transformer-sharp": "^2.2.0",
     "husky": "^3.0.3",
     "node-sass": "^4.12.0",
