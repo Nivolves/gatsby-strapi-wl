@@ -1,11 +1,34 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
+import { graphql, navigate, StaticQuery } from 'gatsby';
 
-const IndexPage = () => (
-  <>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-  </>
-);
+import { ILanguageData } from '../Types/LanguageData';
 
+const IndexPage = () => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          strapiSettings {
+            DefaultLanguage {
+              language
+            }
+          }
+        }
+      `}
+      render={(data: ILanguageData): JSX.Element => {
+        const {
+          strapiSettings: {
+            DefaultLanguage: { language: DefaultLanguage },
+          },
+        } = data;
+
+        useEffect(() => {
+          navigate(`/${DefaultLanguage}`);
+        }, []);
+
+        return <></>;
+      }}
+    />
+  );
+};
 export default IndexPage;
