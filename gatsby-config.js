@@ -15,7 +15,7 @@ module.exports = {
       options: {
         apiURL: 'https://content.nodeart.app',
         queryLimit: 1000,
-        contentTypes: ['languages', 'settings', 'defaultpages'],
+        contentTypes: ['defaultpages', 'languages', 'menu', 'pagetypes', 'setting', 'tabs'],
         loginData: {
           identifier: process.env.LOGIN,
           password: process.env.PASSWORD,
@@ -30,9 +30,9 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: 'Roboto',
-            variants: ['400', '900'],
-            subsets: ['cyrillic', 'latin'],
+            family: 'Montserrat',
+            variants: ['400', '500', '600', '700', '800', '900'],
+            subsets: ['cyrillic'],
           },
         ],
         formats: ['woff', 'woff2', 'ttf', 'eot'],

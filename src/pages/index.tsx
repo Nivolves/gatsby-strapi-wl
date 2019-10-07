@@ -1,34 +1,34 @@
 import React, { useEffect } from 'react';
-import { graphql, navigate, StaticQuery } from 'gatsby';
+import { graphql, navigate, useStaticQuery } from 'gatsby';
 
-import { ILanguageData } from '../Types/LanguageData';
+import { ISettingsData } from '../Types/SettingsData';
 
-const IndexPage = () => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          strapiSettings {
-            DefaultLanguage {
-              language
-            }
-          }
-        }
-      `}
-      render={(data: ILanguageData): JSX.Element => {
-        const {
-          strapiSettings: {
-            DefaultLanguage: { language: DefaultLanguage },
-          },
-        } = data;
+export const INDEX_PAGE_QUERY = graphql`
+  query {
+    settings: strapiSetting {
+      DefaultLanguage {
+        language
+      }
+      FooterLinksColor
+      LinksColor
+      LinksColorHover
+      PrimaryColor
+      PrimaryColorHover
+    }
+  }
+`;
+const IndexPage: React.FC = (): JSX.Element => {
+  const data: ISettingsData = useStaticQuery(INDEX_PAGE_QUERY);
+  const {
+    settings: {
+      DefaultLanguage: { language: DefaultLanguage },
+    },
+  } = data;
 
-        useEffect(() => {
-          navigate(`/${DefaultLanguage}`);
-        }, []);
+  useEffect(() => {
+    navigate(`/${DefaultLanguage}`);
+  }, []);
 
-        return <></>;
-      }}
-    />
-  );
+  return <></>;
 };
 export default IndexPage;

@@ -1,3 +1,70 @@
-div {
-  background-color: var(--my-variable-name);
+:root {
+  //colors 
+  --language-select: #f0f3f7;
+  --white-color: #fff;
+
+  //containers
+  --medium-container: 1000px;
+
+  // Font-family
+  --font-family: 'Montserrat', sans-serif;
+
+  // Font-sizes
+  --small-font: 12px;
+  --medium-font: 14px;
+  --primary-font: 16px;
+  --mobile-heading-font: 18px;
+  --big-font: 20px;
+  --large-font: 24px;
+  --special-big-font: 36px;
+
+  // Font-weights
+  --primary-font-weight: 400;
+  --regular-font-weight: 500;
+  --title-font-weight: 600;
+  --medium-font-weight: 700;
+
+  //shadows 
+  --header-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 320px;
+  margin: 0;
+  color: var(--primary-color);
+  line-height: 1.5em;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+}
+
+#___gatsby {
+  width: 100%;
+}
+
+#___gatsby > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#___gatsby > div > div {
+  flex: 1 0 100%;
+}
+
+.fixed {
+  position: fixed;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
 }

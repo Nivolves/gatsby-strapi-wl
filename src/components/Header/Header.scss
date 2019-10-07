@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  height: 40px;
+  box-shadow: var(--header-shadow);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--medium-container);
+  margin: 0 auto;
+}
+
+.header-right-side {
+  display: flex;
+  padding-right: 35px;
+}
+
+@media only screen and (min-width: 950px) {
+  header {
+    height: 80px;
+  }
+
+  .header-left-side > nav {
+    display: flex;
+  }
+}
