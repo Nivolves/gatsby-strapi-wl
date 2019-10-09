@@ -39,7 +39,7 @@ const Dropdawn: React.FC<IDropdawnProps> = ({ children, className, isMenuOpen, o
       <ul ref={dropdawn} className={`dropdawn-list ${isDropdawnOpen ? 'dropdawn-list-open' : 'dropdawn-list-close'}`}>
         {children.map(({ className: dropdawnItemClassName, link, title: dropdawnItemTitle }: IDropdawnMenu) => (
           <li key={link} className={dropdawnItemClassName}>
-            <Link onClick={isMenuOpen ? () => openMenu() : () => {}} to={link}>
+            <Link onClick={isMenuOpen ? (): void => openMenu() : (): void => {}} to={link}>
               {dropdawnItemTitle}
             </Link>
           </li>
