@@ -24,7 +24,7 @@ export interface IMenuProps {
   openMenu: () => void;
 }
 
-export interface ISecondaryHeader {
+export interface ISecondaryHeaderProps {
   isMenuOpen: boolean;
   openMenu: () => void;
 }

@@ -1,3 +1,7 @@
+export interface IAddress {
+  address: string;
+}
+
 export interface IChildImageSharp {
   childImageSharp: {
     resize: {
@@ -6,9 +10,24 @@ export interface IChildImageSharp {
   };
 }
 
-export interface IDefaultPage {
+export interface IContacts {
+  addresses: IAddress[];
+  language: {
+    language: string;
+  };
+  phones: IPhone[];
   title: string;
+}
+
+export interface IContactsData {
+  contacts: {
+    nodes: IContacts[];
+  };
+}
+
+export interface IDefaultPage {
   link: string;
+  title: string;
 }
 
 export interface IDropdawnMenu {
@@ -49,11 +68,32 @@ export interface IMenuData {
 
 export interface IPageType {
   defaultpages: IDefaultPage[];
-  type: string;
+  language: {
+    language: string;
+  };
+  title: string;
 }
 
 export interface IPageTypes {
   pageTypes: {
     nodes: IPageType[];
+  };
+}
+
+export interface IPhone {
+  phone: string;
+}
+
+export interface ISecondaryHeader {
+  language: {
+    language: string;
+  };
+  link: string;
+  title: string;
+}
+
+export interface ISecondaryHeaderData {
+  secondaryHeader: {
+    nodes: ISecondaryHeader[];
   };
 }

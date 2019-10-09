@@ -108,7 +108,7 @@ const Menu: React.FC<IMenuProps> = ({ isMenuOpen, language, openMenu }): JSX.Ele
               }
               return (
                 <li className={className} key={title}>
-                  <Link onClick={isMenuOpen ? () => openMenu() : () => {}} to={link}>
+                  <Link onClick={isMenuOpen ? (): void => openMenu() : (): void => {}} to={link}>
                     {title}
                   </Link>
                 </li>

@@ -44,7 +44,7 @@ const LanguageSelector: React.FC = (): JSX.Element => {
 
   return (
     <div
-      onClick={() => openLanguageSelector(!isLanguageSelectorOpen)}
+      onClick={(): void => openLanguageSelector(!isLanguageSelectorOpen)}
       className={`language-selector ${isLanguageSelectorOpen ? 'language-selector-open' : 'language-selector-close'}`}
       ref={lanuageSelector}
     >

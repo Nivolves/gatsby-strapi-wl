@@ -15,7 +15,18 @@ module.exports = {
       options: {
         apiURL: 'https://content.nodeart.app',
         queryLimit: 1000,
-        contentTypes: ['defaultpages', 'languages', 'menu', 'pagetypes', 'setting', 'tabs'],
+        contentTypes: [
+          'address',
+          'contacts',
+          'defaultpages',
+          'languages',
+          'menu',
+          'pagetypes',
+          'phone',
+          'secondaryheader',
+          'setting',
+          'tabs',
+        ],
         loginData: {
           identifier: process.env.LOGIN,
           password: process.env.PASSWORD,

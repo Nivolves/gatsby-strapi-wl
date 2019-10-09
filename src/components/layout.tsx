@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
+import Footer from './Footer/Footer';
 import Header from './Header/Header';
 
 import context from './context';
@@ -75,6 +76,7 @@ const Layout: React.FC = ({ children }): JSX.Element => {
     <context.Provider value={{ language, setLanguage, languages: allLanguages }}>
       <Header />
       {children}
+      <Footer />
     </context.Provider>
   );
 };
