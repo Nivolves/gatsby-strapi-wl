@@ -30,6 +30,18 @@ export interface IDefaultPage {
   title: string;
 }
 
+export interface IDefaultTemplateProps {
+  data: {
+    defaultPage: IDefaultPage;
+    tabs: {
+      nodes: ITabData[];
+    };
+  };
+  pathContext: {
+    html: string;
+  };
+}
+
 export interface IDropdawnMenu {
   title: string;
   link: string;
@@ -96,4 +108,17 @@ export interface ISecondaryHeaderData {
   secondaryHeader: {
     nodes: ISecondaryHeader[];
   };
+}
+
+export interface ITab {
+  content: string;
+  title: string;
+}
+
+export interface ITabData {
+  childMarkdownRemark: {
+    html: string;
+  };
+  title: string;
+  defaultpages: IDefaultPage[];
 }

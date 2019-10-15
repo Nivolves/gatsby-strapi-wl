@@ -1,0 +1,14 @@
+.tabs {
+  list-style: none;
+
+  &-container {
+    max-width: var(--medium-container);
+    padding: 20px;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .tabs {
+    display: flex;
+  }
+}

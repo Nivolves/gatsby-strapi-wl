@@ -34,7 +34,25 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-custom-blocks',
+            options: {
+              blocks: {
+                danger: {
+                  classes: 'danger',
+                },
+                info: {
+                  classes: 'info',
+                  title: 'optional',
+                },
+              },
+            },
+          },
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-prefetch-google-fonts',
