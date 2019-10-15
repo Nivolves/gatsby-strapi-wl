@@ -28,6 +28,20 @@ exports.onCreateNode = ({ node, actions }) => {
       },
     });
   }
+  if (node.internal.type === 'StrapiTabs') {
+    createNode({
+      ...node,
+      id: `${node.id}-markdown`,
+      parent: node.id,
+      children: [],
+      internal: {
+        type: 'Tabs',
+        mediaType: 'text/markdown',
+        content: node.content,
+        contentDigest: digest(node),
+      },
+    });
+  }
 };
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -54,11 +68,11 @@ exports.createPages = async ({ actions, graphql }) => {
       },
     } = result;
 
-    nodes.forEach(({ link, childMarkdownRemark: { html } }) => {
+    nodes.forEach(({ childMarkdownRemark: { html }, link }) => {
       createPage({
         path: link,
         component: DefaultTemlate,
-        context: { html },
+        context: { html, link },
       });
     });
   });
