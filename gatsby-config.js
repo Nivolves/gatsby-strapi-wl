@@ -17,6 +17,8 @@ module.exports = {
         queryLimit: 1000,
         contentTypes: [
           'address',
+          'article',
+          'blogpage',
           'contacts',
           'defaultpages',
           'languages',

@@ -27,7 +27,7 @@ const DefaultTemlate: React.FC<IDefaultTemplateProps> = ({ data, pathContext }):
   return (
     <div className="content">
       <div dangerouslySetInnerHTML={{ __html: html }} />
-      <Tabs tabs={pageTabs} />
+      {!!pageTabs.length && <Tabs tabs={pageTabs} />}
     </div>
   );
 };
