@@ -3,6 +3,7 @@
 const crypto = require(`crypto`);
 const path = require('path');
 
+const BlogTemlate = path.resolve('./src/templates/blog.tsx');
 const DefaultTemlate = path.resolve('./src/templates/default.tsx');
 
 const digest = data => {
@@ -14,33 +15,37 @@ const digest = data => {
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNode } = actions;
-  if (node.internal.type === 'StrapiDefaultpages') {
+  const {
+    internal: { type },
+  } = node;
+
+  const nodeCreating = nodeType => {
     createNode({
       ...node,
       id: `${node.id}-markdown`,
       parent: node.id,
       children: [],
       internal: {
-        type: 'DefaultPage',
+        type: nodeType,
         mediaType: 'text/markdown',
         content: node.content,
         contentDigest: digest(node),
       },
     });
-  }
-  if (node.internal.type === 'StrapiTabs') {
-    createNode({
-      ...node,
-      id: `${node.id}-markdown`,
-      parent: node.id,
-      children: [],
-      internal: {
-        type: 'Tabs',
-        mediaType: 'text/markdown',
-        content: node.content,
-        contentDigest: digest(node),
-      },
-    });
+  };
+
+  switch (type) {
+    case 'StrapiArticle':
+      nodeCreating('Article');
+      break;
+    case 'StrapiDefaultpages':
+      nodeCreating('DefaultPage');
+      break;
+    case 'StrapiTabs':
+      nodeCreating('Tabs');
+      break;
+    default:
+      break;
   }
 };
 
@@ -49,12 +54,17 @@ exports.createPages = async ({ actions, graphql }) => {
 
   await graphql(`
     {
-      allDefaultPage {
+      defaultPages: allDefaultPage {
         nodes {
           link
           childMarkdownRemark {
             html
           }
+        }
+      }
+      blogPages: allStrapiBlogpage {
+        nodes {
+          link
         }
       }
     }
@@ -64,7 +74,8 @@ exports.createPages = async ({ actions, graphql }) => {
     }
     const {
       data: {
-        allDefaultPage: { nodes },
+        defaultPages: { nodes },
+        blogPages: { nodes: blogPagesNodes },
       },
     } = result;
 
@@ -73,6 +84,13 @@ exports.createPages = async ({ actions, graphql }) => {
         path: link,
         component: DefaultTemlate,
         context: { html, link },
+      });
+    });
+    blogPagesNodes.forEach(({ link }) => {
+      createPage({
+        path: link,
+        component: BlogTemlate,
+        context: { link },
       });
     });
   });

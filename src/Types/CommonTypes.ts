@@ -1,5 +1,27 @@
+export interface IArticle {
+  title: string;
+  link: string;
+  previewContent: string;
+  previewImage: IChildImageSharp;
+  previewImageAlt: string;
+}
+
 export interface IAddress {
   address: string;
+}
+
+export interface IBlogPage {
+  buttonText: string;
+  title: string;
+}
+
+export interface IBlogTemplateProps {
+  data: {
+    articles: {
+      nodes: IArticle[];
+    };
+    blogPage: IBlogPage;
+  };
 }
 
 export interface IChildImageSharp {
