@@ -13,22 +13,9 @@ module.exports = {
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: 'https://content.nodeart.app',
+        apiURL: 'http://strapi.dncapp.website',
         queryLimit: 1000,
-        contentTypes: [
-          'address',
-          'article',
-          'blogpage',
-          'contacts',
-          'defaultpages',
-          'languages',
-          'menu',
-          'pagetypes',
-          'phone',
-          'secondaryheader',
-          'setting',
-          'tabs',
-        ],
+        contentTypes: ['menu', 'settings', 'socialicon'],
         loginData: {
           identifier: process.env.LOGIN,
           password: process.env.PASSWORD,

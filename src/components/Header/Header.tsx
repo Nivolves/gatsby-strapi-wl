@@ -1,33 +1,30 @@
-import React, { useCallback, useContext, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
-import LanguageSelector from './LanguageSelector';
+import Button from '../Button/Button';
+import Logo from './Logo';
 import Menu from './Menu';
-import MenuButton from './MenuButton';
-
-import context from '../context';
-
-import { IContext } from '../../Types/ContextTypes';
+import OpenBtn from './OpenBtn';
 
 import './Header.scss';
 
 const Header: React.FC = (): JSX.Element => {
-  const [isMenuOpen, openMenu] = useState<boolean>(false);
-  const { language }: IContext = useContext(context);
+  const [isMenuOpen, openMenu] = useState(false);
 
-  const openMobileMenu = useCallback(() => {
-    document.getElementsByTagName('body')[0].classList.toggle('fixed');
+  const menuOpen = useCallback(() => {
     openMenu(!isMenuOpen);
+    document.getElementsByTagName('body')[0].classList.toggle('fixed');
   }, [isMenuOpen]);
 
   return (
     <header>
       <div className="header-container">
         <div className="header-left-side">
-          <MenuButton openMenu={openMobileMenu} />
-          <Menu language={language || 'en'} isMenuOpen={isMenuOpen} openMenu={openMobileMenu} />
+          <OpenBtn menuOpen={menuOpen} />
+          <Logo />
+          <Menu isMenuOpen={isMenuOpen} menuOpen={menuOpen} />
         </div>
         <div className="header-right-side">
-          <LanguageSelector />
+          <Button />
         </div>
       </div>
     </header>
