@@ -1,0 +1,56 @@
+.brk-btn {
+  position: relative;
+  height: 35px;
+  width: 150px;
+  margin: auto 10px;
+  border: 1px solid var(--primary-color);
+  background: none;
+  color: var(--primary-color);
+  font-size: var(--medium-font);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  &::before {
+    position: absolute;
+    right: 20%;
+    top: -0.21em;
+    display: block;
+    height: 0.3em;
+    width: 10%;
+    background: var(--white-color);
+    content: '';
+    transform: skewX(-45deg);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  &::after {
+    position: absolute;
+    left: 20%;
+    bottom: -0.25em;
+    display: block;
+    width: 10%;
+    background: var(--white-color);
+    height: 0.3em;
+    content: '';
+    transform: skewX(45deg);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .brk-btn {
+    height: 40px;
+    width: 180px;
+    font-size: var(--primary-color);
+  }
+}
