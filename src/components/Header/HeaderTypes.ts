@@ -1,30 +1,7 @@
-import { IDropdawnMenu } from '../../Types/CommonTypes';
-
-export interface IDropdawnProps {
-  children: IDropdawnMenu[];
-  className: string;
+export interface IMenuProps extends IOpenBtnProps {
   isMenuOpen: boolean;
-  openMenu: () => void;
-  title: string;
 }
 
-export interface ILogoProps {
-  alt: string;
-  logo: string;
-  path: string;
-}
-
-export interface IMenuButtonProps {
-  openMenu: () => void;
-}
-
-export interface IMenuProps {
-  isMenuOpen: boolean;
-  language: string;
-  openMenu: () => void;
-}
-
-export interface ISecondaryHeaderProps {
-  isMenuOpen: boolean;
-  openMenu: () => void;
+export interface IOpenBtnProps {
+  menuOpen: () => void;
 }

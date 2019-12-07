@@ -1,146 +1,36 @@
-export interface IArticle {
-  title: string;
-  link: string;
-  previewContent: string;
-  previewImage: IChildImageSharp;
-  previewImageAlt: string;
-}
-
-export interface IAddress {
-  address: string;
-}
-
-export interface IBlogPage {
-  buttonText: string;
-  title: string;
-}
-
-export interface IBlogTemplateProps {
-  data: {
-    articles: {
-      nodes: IArticle[];
-    };
-    blogPage: IBlogPage;
-  };
-}
-
-export interface IChildImageSharp {
+export interface IImage {
   childImageSharp: {
-    resize: {
+    fluid: {
       src: string;
     };
   };
 }
 
-export interface IContacts {
-  addresses: IAddress[];
-  language: {
-    language: string;
+export interface ILogo {
+  settings: {
+    logo: IImage;
+    name: string;
   };
-  phones: IPhone[];
-  title: string;
-}
-
-export interface IContactsData {
-  contacts: {
-    nodes: IContacts[];
-  };
-}
-
-export interface IDefaultPage {
-  link: string;
-  title: string;
-}
-
-export interface IDefaultTemplateProps {
-  data: {
-    defaultPage: IDefaultPage;
-    tabs: {
-      nodes: ITabData[];
-    };
-  };
-  pathContext: {
-    html: string;
-  };
-}
-
-export interface IDropdawnMenu {
-  title: string;
-  link: string;
-  className: string;
-}
-
-export interface IHeaderMenu {
-  title: string;
-  link?: string;
-  className: string;
-  children?: IDropdawnMenu[];
 }
 
 export interface IMenu {
-  language: {
-    language: string;
-  };
   link: string;
-  order: number;
-  parentPage: {
-    title: string;
-  };
   title: string;
-  type: string | null;
 }
 
 export interface IMenuData {
   menu: {
     nodes: IMenu[];
   };
-  settings: {
-    Logo: IChildImageSharp;
-    siteName: string;
-  };
 }
 
-export interface IPageType {
-  defaultpages: IDefaultPage[];
-  language: {
-    language: string;
-  };
-  title: string;
-}
-
-export interface IPageTypes {
-  pageTypes: {
-    nodes: IPageType[];
-  };
-}
-
-export interface IPhone {
-  phone: string;
-}
-
-export interface ISecondaryHeader {
-  language: {
-    language: string;
-  };
+export interface ISocialIcons {
+  icon: string;
   link: string;
-  title: string;
 }
 
-export interface ISecondaryHeaderData {
-  secondaryHeader: {
-    nodes: ISecondaryHeader[];
+export interface ISocialIconsData {
+  socialIcons: {
+    nodes: ISocialIcons[];
   };
-}
-
-export interface ITab {
-  content: string;
-  title: string;
-}
-
-export interface ITabData {
-  childMarkdownRemark: {
-    html: string;
-  };
-  title: string;
-  defaultpages: IDefaultPage[];
 }

@@ -1,14 +1,41 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 
-import { ILogoProps } from './HeaderTypes';
+import { ILogo } from '../../Types/CommonTypes';
 
 import './Logo.scss';
 
-const Logo: React.FC<ILogoProps> = ({ alt, logo, path }): JSX.Element => (
-  <Link className="logo-container" to={path}>
-    <img className="logo" src={logo} alt={alt} />
-  </Link>
-);
+const LOGO_QUERY = graphql`
+  query LogoQuery {
+    settings: strapiSettings {
+      logo {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
+      }
+      name
+    }
+  }
+`;
+
+const Logo: React.FC = () => {
+  const {
+    settings: {
+      logo: {
+        childImageSharp: {
+          fluid: { src },
+        },
+      },
+      name,
+    },
+  }: ILogo = useStaticQuery(LOGO_QUERY);
+  return (
+    <Link to="/" className="logo-container">
+      <img src={src} alt={name} />
+    </Link>
+  );
+};
 
 export default Logo;

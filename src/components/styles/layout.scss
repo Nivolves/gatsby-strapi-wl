@@ -1,10 +1,10 @@
 :root {
-  //colors 
-  --language-select: #f0f3f7;
+  //colors
+  --primary-color: #0c164a;
   --white-color: #fff;
 
   //containers
-  --medium-container: 1000px;
+  --medium-container: 1300px;
 
   // Font-family
   --font-family: 'Montserrat', sans-serif;
@@ -24,10 +24,10 @@
   --title-font-weight: 600;
   --medium-font-weight: 700;
 
-  //shadows 
-  --button-shadow: 0 10px 15px rgba(0,0,0,0.1);
-  --header-shadow: 0 0 10px rgba(0,0,0,0.1);
-  --tabs-box-shadow: rgba(0,0,0,0.1);
+  //shadows
+  --button-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --header-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --tabs-box-shadow: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -47,6 +47,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
+}
+
+input,
+button {
+  outline: none;
 }
 
 #___gatsby {
@@ -96,6 +101,6 @@ h3 {
     background-color: var(--primary-color);
     border: none;
     box-shadow: var(--button-shadow);
-    transition: background-color .2s ease-in-out,box-shadow .2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   }
 }
