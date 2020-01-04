@@ -1,6 +1,6 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
-import Header from './Header/Header';
+import Header from './Header/Header.tsx';
 
 import './styles/layout.scss';
 

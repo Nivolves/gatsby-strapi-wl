@@ -13,9 +13,9 @@ module.exports = {
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: 'http://strapi.dncapp.website',
+        apiURL: 'http://46.101.116.184:1337',
         queryLimit: 1000,
-        contentTypes: ['menu', 'settings', 'socialicon'],
+        contentTypes: ['menu', 'socialicon','settings','aboutus'],
         loginData: {
           identifier: process.env.LOGIN,
           password: process.env.PASSWORD,
@@ -49,7 +49,7 @@ module.exports = {
         fonts: [
           {
             family: 'Montserrat',
-            variants: ['400', '500', '600', '700', '800', '900'],
+            variants: ['300', '400', '500', '600', '700', '800', '900'],
             subsets: ['cyrillic'],
           },
         ],

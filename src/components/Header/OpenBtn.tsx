@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IOpenBtnProps } from './HeaderTypes';
+import { IOpenBtnProps } from './HeaderTypes.ts';
 
 import './OpenBtn.scss';
 

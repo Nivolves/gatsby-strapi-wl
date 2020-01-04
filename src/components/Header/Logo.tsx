@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 
-import { ILogo } from '../../Types/CommonTypes';
+import { ILogo } from '../../Types/CommonTypes.ts';
 
 import './Logo.scss';
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import { ISocialIcons, ISocialIconsData } from '../../Types/CommonTypes';
+import { ISocialIcons, ISocialIconsData } from '../../Types/CommonTypes.ts';
 
 import './SocialLinks.scss';
 

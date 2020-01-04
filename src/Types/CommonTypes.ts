@@ -4,12 +4,23 @@ export interface IImage {
       src: string;
     };
   };
+  name: string;
 }
 
 export interface ILogo {
   settings: {
     logo: IImage;
     name: string;
+  };
+}
+
+export interface IMainAbout {
+  aboutUs: {
+    title: string;
+    subtitle: string;
+    mainpage_content: string;
+    link_text: string;
+    main_page_photo: IImage;
   };
 }
 

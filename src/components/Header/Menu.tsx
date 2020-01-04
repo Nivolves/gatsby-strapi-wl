@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 
-import SocialIcons from '../SocialIcons/SocialIcons';
+import SocialIcons from '../SocialIcons/SocialIcons.tsx';
 
-import { IMenu, IMenuData } from '../../Types/CommonTypes';
-import { IMenuProps } from './HeaderTypes';
+import { IMenu, IMenuData } from '../../Types/CommonTypes.ts';
+import { IMenuProps } from './HeaderTypes.ts';
 
 import './Menu.scss';
 

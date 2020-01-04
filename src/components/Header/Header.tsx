@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
 
-import Button from '../Button/Button';
-import Logo from './Logo';
-import Menu from './Menu';
-import OpenBtn from './OpenBtn';
+import Button from '../Button/Button.tsx';
+import Logo from './Logo.tsx';
+import Menu from './Menu.tsx';
+import OpenBtn from './OpenBtn.tsx';
 
 import './Header.scss';
 
