@@ -11,6 +11,7 @@ const ABOUTUS_QUERY = graphql`
       subtitle
       mainPageContent: mainpage_content
       LinkText: link_text
+      link
       main_page_photo {
         childImageSharp {
           fluid {
@@ -30,6 +31,7 @@ const AboutUs: React.FC = (): JSX.Element => {
       subtitle,
       mainPageContent,
       LinkText,
+      link,
       main_page_photo: {
         childImageSharp: {
           fluid: { src },
@@ -45,7 +47,7 @@ const AboutUs: React.FC = (): JSX.Element => {
         <h1>{title}</h1>
         <h4>{subtitle}</h4>
         <article>{mainPageContent}</article>
-        <Link to="/">{LinkText}</Link>
+        <Link to={link}>{LinkText}</Link>
       </div>
       <div className="image_block">
         <div />
