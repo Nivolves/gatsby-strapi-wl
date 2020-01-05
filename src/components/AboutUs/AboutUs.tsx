@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { IMainAbout } from '../../Types/CommonTypes.ts';
+import { IMainAbout } from '../../Types/CommonTypes';
 
 import './AboutUs.scss';
 
@@ -30,7 +30,7 @@ const AboutUs: React.FC = (): JSX.Element => {
       title,
       subtitle,
       mainPageContent,
-      LinkText,
+      linkText,
       link,
       main_page_photo: {
         childImageSharp: {
@@ -47,7 +47,7 @@ const AboutUs: React.FC = (): JSX.Element => {
         <h1>{title}</h1>
         <h4>{subtitle}</h4>
         <article>{mainPageContent}</article>
-        <Link to={link}>{LinkText}</Link>
+        <Link to={link}>{linkText}</Link>
       </div>
       <div className="image_block">
         <div />

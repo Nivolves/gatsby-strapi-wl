@@ -15,7 +15,7 @@ module.exports = {
       options: {
         apiURL: 'http://46.101.116.184:1337',
         queryLimit: 1000,
-        contentTypes: ['menu', 'socialicon','settings','aboutus'],
+        contentTypes: ['menu', 'socialicon','settings','aboutus','mainpageservices','services','servicesolutions'],
         loginData: {
           identifier: process.env.LOGIN,
           password: process.env.PASSWORD,
@@ -49,7 +49,7 @@ module.exports = {
         fonts: [
           {
             family: 'Montserrat',
-            variants: ['300', '400', '500', '600', '700', '800', '900'],
+            variants: ['200','300', '400', '500', '600', '700', '800', '900'],
             subsets: ['cyrillic'],
           },
         ],

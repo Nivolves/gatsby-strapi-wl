@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from './Header/Header.tsx';
+import Header from './Header/Header';
 
 import './styles/layout.scss';
 

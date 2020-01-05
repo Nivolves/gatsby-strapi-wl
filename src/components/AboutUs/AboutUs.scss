@@ -75,3 +75,40 @@ section.aboutUs
         }
     }
 }
+@media only screen and (max-width:900px)
+{
+    section.aboutUs 
+    {
+        div.text_block
+        {
+            h1 
+            {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:600px)
+{
+    section.aboutUs 
+    {
+        position: relative;
+        div.text_block 
+        {
+            width: 100%;
+            background:transparent;
+            z-index: 2;
+        }
+        div.image_block
+        {
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            >div 
+            {
+                opacity:0.7;
+            }
+        }
+    }
+}

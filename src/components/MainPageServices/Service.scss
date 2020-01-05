@@ -1,0 +1,124 @@
+div.service-item
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: var(--black-color);
+    box-shadow: 0px 5px 10px #ddd;
+    border-radius: 12px;
+    padding: 20px 0;
+    transition: 0.2s linear;
+    &:hover 
+    {
+        box-shadow: 0px 3px 15px #ddd;
+        transform: translateY(-5px);
+    }
+    >div
+    {
+        display: flex;
+        justify-content: center;
+        >svg
+        {
+            height: 105px;
+            width: 105px;
+        }
+    }
+    h3 
+    {
+        display: block;        
+        margin: 0 0 15px;
+        padding: 30px 0 15px;
+        border-bottom: 1px solid var(--primary-color);
+        text-align: center;
+        font-size: 25px;
+        font-weight: 200;
+        text-transform: uppercase;
+    }
+    article
+    {
+        text-align: justify;
+        font-size: 15px;
+        font-weight: 200;
+        padding: 0 40px;
+    }
+    img 
+    {
+        margin-top: 20px;
+        width: 35px;
+        height: 55px;
+        object-fit: contain;
+    }
+    ol 
+    {
+        width: 100%;
+        padding: 0 65px;
+        margin: 25px 0 1rem;
+        list-style-type: decimal-leading-zero;
+        >li 
+        {
+            padding-left: 15px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width:1140px)
+{
+    div.service-item 
+    {
+        h3 
+        {
+            font-size:20px;
+        }
+        article
+        {
+            padding: 0 20px;
+        }
+        ol 
+        {
+            padding: 0 40px;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+    }
+}
+@media only screen and (max-width:900px)
+{
+    div.service-item 
+    { 
+        margin-bottom: 40px;
+        h3 
+        {
+            font-size: 25px;
+        }
+        article
+        {
+            padding: 0 50px;
+        }
+        ol 
+        {
+            padding: 0 75px;
+        }
+    }
+
+}
+@media only screen and (max-width:400px)
+{
+    div.service-item 
+    { 
+        margin-bottom: 40px;
+        h3 
+        {
+            font-size: 20px;
+        }
+        article 
+        {
+            padding: 0 20px;
+        }
+        ol 
+        {
+            padding: 0 45px;
+        }
+    }
+}
+
